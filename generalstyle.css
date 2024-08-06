@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'SpaceGrotesk-Regular';
+    src: url('./SF-Pro-Rounded-Regular.otf');
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Medium';
+    src: url('./SF-Pro-Display-Medium.otf');
+}
+@font-face {
+    font-family: 'SpaceGrotesk-SemiBold';
+    src: url('./SpaceGrotesk-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Bold';
+    src: url('./SF-Pro-Display-Black.otf');
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Light';
+    src: url('./SpaceGrotesk-Light.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow-x: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: calc(100vw * 9); /* Assuming you have 9 sections */
+    height: 85vh;
+    display: flex;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'SpaceGrotesk-Medium';
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.timeline {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    padding: 1.25em 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.scroller {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    font-family: 'SpaceGrotesk-Medium';
+    text-transform: uppercase;
+    background: #000;
+    cursor: pointer;
+    line-height: 120%;
+}
+
+span {
+    font-family: 'SpaceGrotesk-Medium';
+    font-size: 15px;
+    padding: 0 3em;
+}
+
+section {
+    position: relative;
+    width: 150vw;
+    height: 100%;
+    padding: 6em 2em 0 2em;
+    display: flex;
+    gap: 2em;
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    width: 50%;
+    font-family: 'SpaceGrotesk-Bold';
+    font-weight: 400;
+    font-size: 5vw;
+    text-transform: uppercase;
+}
+
+p {
+    width: 40%;
+    font-family: 'SpaceGrotesk-Regular';
+    font-size: 24px;
+}
+
+#section-4, #section-6, #section-8, #section-5, #section-2, #section-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#section-1 {
+    width: 100vw;
+}
+/* 
+.img-2, .img-3, .img-6, .img-7, .img-9 {
+    flex: 1;
+}
+
+.img-1, .img-5, .img-8, .img-4 {
+    flex: 1;
+}  */
+
+img {
+    filter: contrast(90%);
+}
+/* 
+h1 {
+    color: crimson;
+} */

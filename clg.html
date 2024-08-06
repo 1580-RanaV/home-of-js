@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Profile</title>
+    <link rel="shortcut icon" type="image/jpg" href="./favicon.ico"/>
+    <link rel="stylesheet" href="adidasstyle.css">
+</head>
+<body>
+    <nav>
+        <a href="#">V Jaya Surya</a>
+        <a href="#">HOUSE OF JS</a>
+        <div id="clock" style="font-family: 'SpaceGrotesk-Medium'"></div>
+        <a href="#">COLLEGE WORKS</a>
+    </nav>
+
+    <div class="container">
+                                                                                                    <!-- 1st project -->
+        <section id="section-1">
+            <h1>01<br>PORSCHE<br>ELECTRIC CAR PLANT</h1>
+            <p>
+                Brief:
+                The design project focuses on creating an automobile manufacturing plant that accommodates both fuel and electric vehicle production. It emphasizes implementing comprehensive safety measures and service provisions to ensure secure and efficient operations for both manufacturing output and staff.
+                <br><br>
+                Aim:
+                The proposed design aims to advance the automotive industry by integrating alternative energy sources, fostering economic growth, and promoting environmental awareness. By providing a platform for innovation, the plant will facilitate the shift towards electric vehicles, highlighting the importance of renewable energy and addressing environmental degradation.
+                <br><br>
+                Abstract:
+                The project focuses on spatial reorganization to enhance production conditions, informed by research from companies like IBM, Renault, and Olivetti. These companies have explored future factory concepts with expert input. <br>
+                <br>
+                Click here to download my pdf submission of the <br>entire thesis.<a href="assets/clg/101115043 V Jaya Surya Final Report.pdf" download="V Jaya Surya Final Report NITT.pdf"><span class = "download">( Download Final Report PDF )</span></a>
+            </p>
+        </section>
+        
+        <section id="section-2">
+            <div class="img img-1"><img src="./assets/clg/1.jpg" alt="Image 1"></div>
+            <div class="img img-2"><img src="./assets/clg/2.jpg" alt="Image 2"></div>
+            <div class="img img-3"><img src="./assets/clg/3.jpg" alt="Image 3"></div>
+        </section>
+
+        <section id="section-3">
+            <div class="img img-4"><img src="./assets/clg/4.jpg" alt="Image 4"></div>
+            <div class="img img-5"><img src="./assets/clg/5.jpg" alt="Image 5"></div>
+            <div class="img img-5"><img src="./assets/clg/6.jpg" alt="Image 5"></div>
+            <!-- <div class="img img-6"><img src="./assets/Adidas segment/adidas office d3/D5_001 A 1_20240515_151550.png" alt="Image 6"></div> -->
+        </section>
+        
+    </div>
+
+    <div class="timeline">
+        <div class="scroller"><p>[<span>DRAG</span>]</p></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+
+    <script>
+
+        gsap.registerPlugin(Draggable);
+    
+        window.onload = function() {
+            const timeline = document.querySelector(".timeline");
+            const scroller = document.querySelector(".scroller");
+            const container = document.querySelector(".container");
+            const timelineWidth = timeline.offsetWidth;
+            const scrollerWidth = scroller.offsetWidth;
+            const gap = parseInt(window.getComputedStyle(document.body).fontSize);
+            const containerWidth = container.scrollWidth;
+    
+            const maxDragX = timelineWidth - scrollerWidth - 2 * gap;
+    
+            Draggable.create(scroller, {
+                type: "x",
+                bounds: {
+                    minX: gap,
+                    maxX: timelineWidth - scrollerWidth - gap,
+                },
+                onDrag: function() {
+                    let progress = (this.x - gap) / maxDragX;
+                    let containerX = -progress * (containerWidth - window.innerWidth);
+                    gsap.to(container, {
+                        x: containerX,
+                        duration: 1,
+                        ease: "power3.out",
+                    });
+                },
+            });
+    
+            // Handle mouse wheel event for horizontal scrolling
+            window.addEventListener('wheel', function(event) {
+                if (event.deltaY !== 0) {
+                    container.scrollLeft += event.deltaY;
+                    event.preventDefault(); // Prevent default vertical scroll
+                }
+            });
+        };
+
+        setTimeout(function() {
+                const scrollDistance = 300; // Adjust this value as needed
+                gsap.to(container, {
+                    scrollLeft: scrollDistance,
+                    duration: 1,
+                    ease: "power3.out"
+                });
+            }, 1000); 
+    </script>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000); // Update the clock every second
+        updateClock(); // Initialize the clock immediately
+    </script>
+    </body>
+    </html>
