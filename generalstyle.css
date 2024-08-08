@@ -195,4 +195,8 @@ h1 {
     .scroller {
         display: none; /* Hide scroller on mobile */
     }
+
+    a {
+        font-size: 11px;
+    }
 }
