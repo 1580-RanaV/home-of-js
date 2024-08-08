@@ -43,7 +43,7 @@ export const stories = [
             "at my journey",
             "till now.",
         ],
-        linkLabel: "Click here for track",
+        linkLabel: "Click here for career track",
         linkSrc: "./about.html",
         storyImg: "slide1.png",
     }
