@@ -191,4 +191,8 @@ p {
     .scroller {
         display: none; /* Hide scroller on mobile */
     }
+
+    nav a {
+        font-size: 7px;
+    }
 }
