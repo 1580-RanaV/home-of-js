@@ -196,4 +196,12 @@ img {
     .scroller {
         display: none; /* Hide scroller on mobile */
     }
+
+    nav a {
+        font-size: 10.5px;
+    }
+
+    #clock {
+        font-size: 10.5px !important;
+    }
 }
