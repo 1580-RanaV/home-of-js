@@ -193,6 +193,10 @@ p {
     }
 
     nav a {
-        font-size: 7px;
+        font-size: 9px;
+    }
+
+    #clock {
+        font-size: 9px;
     }
 }
