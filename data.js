@@ -21,7 +21,7 @@ export const stories = [
         ],
         linkLabel: "Click here to take a look",
         linkSrc: "./adidas.html",
-        storyImg: "slide2.png",
+        storyImg: "rsxadidas.png",
     },
     {
         profileImg: "profile.jpg",
